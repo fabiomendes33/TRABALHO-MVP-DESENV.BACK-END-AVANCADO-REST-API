@@ -29,7 +29,7 @@ def home():
     return redirect('/openapi')
 
 
-@app.put('/Cadastro produto', tags=[produto_tag],
+@app.post('/Cadastro produto', tags=[produto_tag],
           responses={"200": ProdutoViewSchema, "409": ErrorSchema, "400": ErrorSchema})
 def add_produto(form: ProdutoSchema):
     """Adiciona um novo Produto à base de dados
