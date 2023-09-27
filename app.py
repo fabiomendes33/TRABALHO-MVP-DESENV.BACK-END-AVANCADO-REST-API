@@ -200,4 +200,13 @@ def add_comentario(form: ComentarioSchema):
     # retorna a representação de produto
     return apresenta_produto(produto), 200
 
+@app.put('/produto', tags=[produto_tag],
+          responses={"200": ProdutoViewSchema, "409": ErrorSchema, "400": ErrorSchema})
+def atualiza_produto(form: ProdutoSchema):
+    """Edita um novo Produto já salvo na base de dados
+
+    Retorna uma representação dos produtos e comentários associados.
+    """
+    ...
+
 
